@@ -1,0 +1,23 @@
+extends layout 
+
+block layout-content
+    div#content.content
+        h1 Add a New Record
+        form(method="post", action="/admin/add/submit")
+            div 
+                label(for="title") Title: 
+                    div 
+                        input(type="text", id="title", name="titleName", placeholder="Ex. Thriller")
+            div 
+                label(for="artist") Artist: 
+                    div 
+                        input(type="text", id="artist", name="artistName", placeholder="Ex. Michael Jackson")
+            div 
+                label(for="year") Year Released: 
+                    div 
+                        input(type="number", id="year", name="yearName", placeholder="Ex. 1982")
+            div 
+                label(for="genre") Genre: 
+                    div 
+                        input(type="text", id="genre", name="genreName", placeholder="Ex. Pop")
+                button.btn-add(type="submit") Add Record
