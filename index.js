@@ -10,11 +10,11 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || "8888";
 
-//Setting up mongodb*******************************
-const dbUrl = `mongodb://${process.env.DBUSER}:${process.env.DBPWD}@${process.env.DBHOST}/testdb?authSource=admin`;
+//Setting up mongodb
+//const dbUrl = `mongodb://${process.env.DBUSER}:${process.env.DBPWD}@${process.env.DBHOST}/testdb?authSource=admin`;
 const dbUrlAtlas = `mongodb+srv://${process.env.ADBUSER}:${process.env.ADBPWD}@cluster0.7usbbym.mongodb.net/`;
 
-const client = new MongoClient(dbUrlAtlas);  //********* */
+const client = new MongoClient(dbUrlAtlas); 
 
 //Directing to static files in public folder
 app.use(express.static(path.join(__dirname, "public")));
@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
-//troubleshoot*****************************
+//troubleshoot
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -47,7 +47,7 @@ app.get("/", (request, response) => {
    response.render("admin", {title: "Admin Home", products: records });
  });
 
- //ADD record page routing
+ //Add record page routing
  app.get("/admin/add", async (request, response) => {
    response.render("add", {title: "Add a Record"});
  });
@@ -64,7 +64,6 @@ app.get("/", (request, response) => {
       year: parseInt(year),
       genre: genre
    };
-
    await addRecord(newRecord);
    response.redirect("/admin");
    
