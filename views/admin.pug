@@ -1,0 +1,23 @@
+extends layout 
+block layout-content 
+    div#content.content
+        h1.page-title Admin Menu 
+        a(href="/admin/add").lnk-add + Add new record
+        table 
+            thead 
+                tr 
+                    th Record 
+                    th Action
+            tbody 
+                each record in products
+                    tr
+                        td #{record.title} by #{record.artist}
+                        td 
+                            div#form-box
+                                form(action="/admin/delete")
+                                    input(type="hidden", name="recordId", value=record._id)
+                                    button.btn-dlt(type="submit") Delete
+                                form(action="/admin/edit")
+                                    input(type="hidden", name="recordId", value=record._id)
+                                    button.btn-edt(type="submit") Edit
+                        
