@@ -51,12 +51,13 @@ body {
 
 
 #menu a:hover {
-    color: #E76F51;
+    color: #E9C46A;
 }
 
 #menu{
     display: flex;
     flex-flow: row;
+    flex-wrap: wrap;
     align-items: center;
     list-style: none;
     gap: 20px;
