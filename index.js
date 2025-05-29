@@ -12,7 +12,8 @@ const port = process.env.PORT || "8888";
 
 //Setting up mongodb
 //const dbUrl = `mongodb://${process.env.DBUSER}:${process.env.DBPWD}@${process.env.DBHOST}/testdb?authSource=admin`;
-const dbUrlAtlas = `mongodb+srv://${process.env.ADBUSER}:${process.env.ADBPWD}@cluster0.7usbbym.mongodb.net/`;
+//const dbUrlAtlasA = `mongodb+srv://${process.env.ADBUSER}:${process.env.ADBPWD}@cluster0.7usbbym.mongodb.net/`;
+const dbUrlAtlas = `mongodb+srv://${process.env.ADBUSER}:${process.env.ADBPWD}@portfolio.ms4acjp.mongodb.net/`;
 
 const client = new MongoClient(dbUrlAtlas); 
 
